@@ -1,12 +1,4 @@
-v0.1.2
-=================
-* changing px-clipboard in bower
-
-v0.1.1
-=================
-* added flex grow to editor class
-
-v0.1.0
+v0.0.11
 =================
 * added light dom content support
 

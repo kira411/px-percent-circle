@@ -1,6 +1,6 @@
 {
   "name": "px-percent-circle",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "main": [
     "px-percent-circle.html"
   ],
@@ -12,38 +12,34 @@
     "bower_components",
     "node_modules",
     "test",
+    "scripts",
+    ".github",
+    "px-percent-circle.png",
     "OSS_Notice.pdf"
   ],
   "dependencies": {
-    "polymer": "~1.5.0",
+    "polymer": "^1.5.0",
     "px-theme": "~0.8.0"
   },
   "devDependencies": {
-    "iron-component-page": "PolymerElements/iron-component-page#~v1.1.6",
     "px-starter-kit-design": "~0.5.5",
     "px-tables-design": "~0.3.9",
     "px-layout-design": "~0.3.8",
-    "px-card": "~0.4.0",
     "px-spacing-design": "~0.3.4",
-    "px-buttons-design": "~0.4.13",
-    "px-button-group-design": "~0.3.8",
     "px-typography-design": "~0.3.2",
     "px-forms-design": "#~0.3.15",
-    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#~1.2.3",
     "px-tabs": "~0.4.0",
-    "ace-widget": "LostInBrittany/ace-widget#~1.0.13",
-    "px-api-viewer": "https://github.com/PredixDev/px-api-viewer.git",
-    "px-demo-snippet": "https://github.com/predixdev/px-demo-snippet.git",
+    "px-api-viewer": "^0.0.4",
+    "px-demo-snippet": "^0.0.12",
     "px-toggle-design": "^0.2.12",
-    "px-headings-design": "^0.2.13",
+    "px-headings-design": "^0.2.14",
     "px-actionable-text-icons-design": "^0.0.3",
     "px-code-design": "^0.2.11",
-    "px-headings-design": "^0.2.14",
     "px-list-inline-design": "^0.2.11",
     "px-polymer-font-awesome": "^0.1.8",
     "px-dropdown": "^0.10.1"
   },
   "resolutions": {
-    "polymer": "^1.5.0"
+    "px-clipboard": "^0.0.11"
   }
 }
