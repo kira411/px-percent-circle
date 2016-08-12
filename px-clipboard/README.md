@@ -1,6 +1,4 @@
-#px-clipboard [![Build Status](https://travis-ci.org/PredixDev/px-clipboard.svg?branch=master)](https://travis-ci.org/PredixDev/px-clipboard)
-
-[![px-clipboard demo](px-clipboard.png?raw=true)](https://github.com/PredixDev/px-clipboard)
+#px-Clipboard
 
 ## Overview
 
