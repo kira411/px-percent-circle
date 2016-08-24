@@ -47,6 +47,7 @@
     "commit": "9a51c535a8a4d7459d0d1e4bf210d0415f412deb"
   },
   "_source": "https://github.com/predixdev/px-percent-circle.git",
-  "_target": "*",
-  "_originalSource": "px-percent-circle"
+  "_target": "^0.0.8",
+  "_originalSource": "px-percent-circle",
+  "_direct": true
 }
