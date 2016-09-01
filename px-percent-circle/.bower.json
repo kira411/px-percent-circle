@@ -1,6 +1,6 @@
 {
   "name": "px-percent-circle",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "main": [
     "px-percent-circle.html"
   ],
@@ -40,13 +40,14 @@
     "px-dropdown": "^0.10.1"
   },
   "homepage": "https://github.com/predixdev/px-percent-circle",
-  "_release": "0.0.8",
+  "_release": "0.0.9",
   "_resolution": {
     "type": "version",
-    "tag": "v0.0.8",
-    "commit": "9a51c535a8a4d7459d0d1e4bf210d0415f412deb"
+    "tag": "v0.0.9",
+    "commit": "0b71d70b77b0dc7bc91c64b51ccc97f9b446e9e2"
   },
   "_source": "https://github.com/predixdev/px-percent-circle.git",
-  "_target": "^0.0.8",
-  "_originalSource": "px-percent-circle"
+  "_target": "^0.0.9",
+  "_originalSource": "px-percent-circle",
+  "_direct": true
 }

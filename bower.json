@@ -1,6 +1,6 @@
 {
   "name": "px-percent-circle",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "main": [
     "px-percent-circle.html"
   ],
@@ -38,5 +38,8 @@
     "px-list-inline-design": "^0.2.11",
     "px-polymer-font-awesome": "^0.1.8",
     "px-dropdown": "^0.10.1"
+  },
+  "resolutions": {
+    "px-percent-circle": "^0.0.9"
   }
 }
