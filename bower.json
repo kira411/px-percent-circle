@@ -40,11 +40,8 @@
     "px-dropdown": "^0.12.1"
   },
   "resolutions": {
-    "iron-ajax": "^1.4.3",
-    "px-typography-design": "^1.1.0",
-    "px-percent-circle": "^0.1.0",
-    "px-clipboard": "^0.1.1",
-    "px-theme": "^1.1.2",
-    "px-tooltip": "~0.8.0"
+    "px-theme": "~1.1.2",
+    "iron-ajax": "^1.0.0",
+    "px-typography-design": "~1.1.1"
   }
 }
