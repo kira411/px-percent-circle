@@ -42,7 +42,7 @@ Predix branding rules go in px-percent-circle-predix.scss, not in this file.
   height: auto;
   width: auto;
 }
-svg circle#background {
+svg path#background {
   fill: transparent;
   stroke: $px-percent-circle-background-color;
 }

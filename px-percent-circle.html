@@ -36,7 +36,8 @@ Custom property | Description | Default
     <style include="px-percent-circle-styles"></style>
     <style include="px-theme-styles"></style>
     <svg id="container" height="100%" width="100%">
-      <circle id="background" cx$="[[_cx]]" cy$="[[_cy]]" r$="[[_r]]" stroke-width$="[[_thickness]]"></circle>
+      <!-- <circle id="background" cx$="[[_cx]]" cy$="[[_cy]]" r$="[[_r]]" stroke-width$="[[_thickness]]"></circle> -->
+      <path id="background" stroke-width$="[[_thickness]]" d$="[[_backgroundPath]]"></path>
       <path id="arc" stroke-width$="[[_thickness]]" d$="[[_arcPath]]"></path>
       <text id="text" x$="[[_cx]]" y$="[[_cy]]" font-size$="[[_placement.tf]]" dx$="[[_placement.tx]]" dy$="[[_placement.ty]]">
         <tspan id="label">[[_percent]]</tspan>
@@ -103,6 +104,16 @@ Custom property | Description | Default
       showValue: {
         type: Boolean,
         value: false
+      },
+
+      startAngle: {
+        type: Number,
+        value: 0
+      },
+
+      endAngle: {
+        type: Number,
+        value: 360
       },
 
       /**
@@ -196,7 +207,16 @@ Custom property | Description | Default
        */
       _arcPath: {
         type: String,
-        computed: '_computedArcPath(_cx, _cy, _r, _percent)'
+        computed: '_computedArcPath(_cx, _cy, _r, _percent, startAngle, endAngle)'
+      },
+      /**
+       * Calculated path for the filled in portion of the donut.
+       * @property _arcPath
+       * @type String
+       */
+      _backgroundPath: {
+        type: String,
+        computed: '_computedArcPath(_cx, _cy, _r, 100, startAngle, endAngle)'
       }
     },
     /**
@@ -312,10 +332,10 @@ Custom property | Description | Default
      * Code for this attributed here:
      * http://stackoverflow.com/questions/5736398/how-to-calculate-the-svg-path-for-an-arc-of-a-circle
      */
-    _computedArcPath: function (x, y, r, percent) {
+    _computedArcPath: function (x, y, r, percent, startAngle, endAngle) {
       var delta = (percent / 100),
-          startAngle = 0,
-          endAngle = 360 * delta;
+          startAngle = startAngle,
+          endAngle = endAngle * delta;
       endAngle = endAngle >= 360 ? 359.99 : endAngle;
       var start = this._polarToCartesian(x, y, r, endAngle),
           end = this._polarToCartesian(x, y, r, startAngle),
