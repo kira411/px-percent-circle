@@ -318,7 +318,7 @@ Custom property | Description | Default
      */
     _computedThickness: function (size, thickness) {
       thickness = parseInt(thickness);
-      return (!thickness || thickness < 1 || thickness / size >= .5) ?  size * .5 : thickness;
+      return (!thickness || thickness < 1 || thickness / size >= .1) ?  size * .1 : thickness;
     },
     /**
      * Calculates path for the filled in portion of the donut.
