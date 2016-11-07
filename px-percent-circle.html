@@ -54,6 +54,16 @@ Custom property | Description | Default
 
     properties: {
       /**
+       * Based 100 or based 1
+       * @property ratio
+       * @type Boolean
+       * @default false
+       */
+      ratio: {
+        type: Boolean,
+        value: false
+      },
+      /**
        * Value of the circle - percent is calculated using the maximum provided. Negative values result in 0% while values above maximum result in 100%.
        * @property val
        * @type Number
@@ -266,13 +276,16 @@ Custom property | Description | Default
      * @param max
      * @param showValue
      */
-    _computedPercent: function(val, max, showValue) {
+    _computedPercent: function(val, max, showValue, ratio) {
       if (showValue) return val;
       if (val > max) {
         console.log('Px Percent Circle: invalid value converted to 100%');
         this._max = 100;
         this._val = 100;
         return 100;
+      }
+      if (this.ratio) {
+        return Number((val/max).toFixed(2));
       }
       return Math.round((val / max) * 100);
     },
@@ -333,17 +346,20 @@ Custom property | Description | Default
      * http://stackoverflow.com/questions/5736398/how-to-calculate-the-svg-path-for-an-arc-of-a-circle
      */
     _computedArcPath: function (x, y, r, percent, startAngle, endAngle) {
+      if (this.ratio && percent < 1) {
+        percent *= 100;
+      }
       var delta = (percent / 100),
-          startAngle = startAngle,
-          endAngle = endAngle * delta;
+              startAngle = startAngle,
+              endAngle = endAngle * delta;
       endAngle = endAngle >= 360 ? 359.99 : endAngle;
       var start = this._polarToCartesian(x, y, r, endAngle),
-          end = this._polarToCartesian(x, y, r, startAngle),
-          arcSweep = endAngle - startAngle <= 180 ? "0" : "1",
-          d = [
-              'M', start.x, start.y,
-              'A', r, r, 0, arcSweep, 0, end.x, end.y
-          ].join(' ');
+              end = this._polarToCartesian(x, y, r, startAngle),
+              arcSweep = endAngle - startAngle <= 180 ? "0" : "1",
+              d = [
+                'M', start.x, start.y,
+                'A', r, r, 0, arcSweep, 0, end.x, end.y
+              ].join(' ');
       return d;
     },
     /**
